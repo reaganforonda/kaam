@@ -18,12 +18,13 @@ export default class Landing extends React.Component{
             email: '',
             password: '',
             confirmPW: '',
-            displayLogin: false
+            displayLoginForm: false
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.resetState = this.resetState.bind(this);
+        this.displayLoginForm = this.displayLoginForm.bind(this);
     }    
 
     handleInputChange(e) {
@@ -50,6 +51,14 @@ export default class Landing extends React.Component{
         })
     }
 
+    displayLoginForm(){
+        if(!this.state.displayLoginForm) {
+           this.setState({displayLoginForm : true}) 
+        } else {
+            this.setState({displayLoginForm: false})
+        }
+    }
+
     render(){
         return (
             <Main>
@@ -60,20 +69,32 @@ export default class Landing extends React.Component{
                 </div>
                 <div>
                     <div>
-                        <div></div>
-                        <div>
-                            <p>Sign Up</p>
-                            <p>or Sine In to your account</p>
-                        </div>
-                        <form>
-                            <input name='firstName' placeholder='First Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
-                            <input name='lastName' placeholder='Last Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
-                            <input name='email' placeholder='Email' type='email' onChange={(e)=> this.handleInputChange(e)} />
-                            <input name='password' placeholder='Password' type='password' onChange={(e)=> this.handleInputChange(e)}/>
-                            <input name='password' placeholder='Confirm Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
-                            <button type='button' onClick={(e)=>this.handleSubmit(e)}>Sign Up</button>
-                        </form>
+                        <button onClick={(e)=>this.displayLoginForm()}>Sign In</button>
                     </div>
+                    {
+                        this.state.displayLoginForm ? 
+                        <div>
+                            <form>
+                                <input name='email' placeholder='Email' type='email' onChange={(e)=>this.handleInputChange(e)}/>
+                                <input name='password' placeholder='Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
+                            </form>
+                        </div> :
+                    
+                        <div>
+                            <div>
+                                <p>Sign Up</p>
+                                <p>or Sign In to your account</p>
+                            </div>
+                            <form>
+                                <input name='firstName' placeholder='First Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
+                                <input name='lastName' placeholder='Last Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
+                                <input name='email' placeholder='Email' type='email' onChange={(e)=> this.handleInputChange(e)} />
+                                <input required name='password' placeholder='Password' type='password' onChange={(e)=> this.handleInputChange(e)}/>
+                                <input required name='password' placeholder='Confirm Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
+                                <button type='button' onClick={(e)=>this.handleSubmit(e)}>Sign Up</button>
+                            </form>
+                        </div>
+                    }
                 </div>
             </Main>
         )
