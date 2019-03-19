@@ -32,8 +32,10 @@ export default class Landing extends React.Component{
 
     handleSubmit(e) {
         e.preventDefault();
-        if(this.state.password === this.state.confirmPW) {
-            
+        if(this.state.password === this.state.confirmPW && (this.state.password !== '' && this.state.confirmPW !== '')) {
+            console.log("PW Match")
+        } else {
+            console.log("PW Do Not Match")
         }
     }
 
