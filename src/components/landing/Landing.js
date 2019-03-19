@@ -21,6 +21,14 @@ const Main = styled.div`
     height: 100vh;
 `
 
+const LoginSection = styled.div`
+    border: solid white 2px;
+    display: flex;
+`
+
+const Input = styled.input`
+
+`
 
 
 export default class Landing extends React.Component{
@@ -30,9 +38,12 @@ export default class Landing extends React.Component{
                 <Header/>
                     <Title>Kaam</Title>
                 <Header/>
-                <div>
-                    Hello World
-                </div>
+                <LoginSection>
+                    <Input placeholder='Email' type='email'/>
+                    <Input placeholder='Company' type='text'/>
+                    <Input placeholder='First Name' type='text'/>
+                    <Input placeholder='Last Name' type='text'/>
+                </LoginSection>
             </Main>
         )
     }
