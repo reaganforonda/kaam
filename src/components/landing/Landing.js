@@ -69,7 +69,11 @@ export default class Landing extends React.Component{
                 </div>
                 <div>
                     <div>
-                        <button onClick={(e)=>this.displayLoginForm()}>Sign In</button>
+                        {
+                            this.state.displayLoginForm ? <button onClick={(e)=>this.displayLoginForm()}>Sign Up</button> : 
+                            <button onClick={(e)=>this.displayLoginForm()}>Sign In</button>
+                        }
+                        
                     </div>
                     {
                         this.state.displayLoginForm ? 
