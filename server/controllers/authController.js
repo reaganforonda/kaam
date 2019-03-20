@@ -22,7 +22,12 @@ module.exports = {
 
 
                 // CREATE USER HERE
+                db.CREATE_USER([email.toLowerCase(), password, firstName, lastName]).then(() => {
+                    res.sendStatus(200);
+                }).catch((err) => {
+                    console.log(`Server error while attempting to create a new user: ${err}`);
+                });
             }
-        })
+        });
     }
 }
