@@ -20,6 +20,12 @@ massive(CONNECTION_STRING).then(dbInstance => {
     app.set('db', dbInstance);
 });
 
+
+// Endpoints
+
+// User Endpoints
+app.post('/api/auth/register', authController.register);
+
 app.listen(SERVER_PORT, ()=>{
     console.log(`Creepin on Port: ${SERVER_PORT}`);
 });
