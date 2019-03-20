@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import axios from 'axios';
 
 const Main = styled.div`
 
@@ -34,7 +34,12 @@ export default class Landing extends React.Component{
     handleSubmit(e) {
         e.preventDefault();
         if(this.state.password === this.state.confirmPW && (this.state.password !== '' && this.state.confirmPW !== '')) {
-            console.log("PW Match")
+            let user = Object.assign({}, this.state);
+            console.log(user);
+            axios.post('/api/auth/register', user).then((result) => {
+                // TODO:
+                
+            })
         } else {
             console.log("PW Do Not Match")
         }
@@ -94,7 +99,7 @@ export default class Landing extends React.Component{
                                 <input name='lastName' placeholder='Last Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
                                 <input name='email' placeholder='Email' type='email' onChange={(e)=> this.handleInputChange(e)} />
                                 <input required name='password' placeholder='Password' type='password' onChange={(e)=> this.handleInputChange(e)}/>
-                                <input required name='password' placeholder='Confirm Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
+                                <input required name='confirmPW' placeholder='Confirm Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
                                 <button type='button' onClick={(e)=>this.handleSubmit(e)}>Sign Up</button>
                             </form>
                         </div>
