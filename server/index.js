@@ -4,6 +4,7 @@ const cors = require('cors');
 const dotEnv = require('dotenv');
 const massive = require('massive');
 const app = express();
+const authController = require('./controllers/authController');
 dotEnv.config();
 
 app.use(bodyParser.json());
