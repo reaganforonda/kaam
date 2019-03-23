@@ -17,14 +17,18 @@ export default class LoginForm extends React.Component{
 
     hanleFormSubmit(e) {
         e.preventDefault();
-
+        
 
     }
 
     render(){
         return (
-            <form>
-
+            <form onSubmit={(e)=>this.hanleFormSubmit(e)}>
+                <input name='email' type='email' placeholder='Email' 
+                    onChange={(e)=>this.hanleFormSubmit(e)} />
+                <input name='password' type='password' placeholder='Password' 
+                    onChange={(e)=>this.handleInputChange(e)} />
+                <button onClick={(e)=>this.hanleFormSubmit(e)}>Log In</button>
             </form>
         )
     }
