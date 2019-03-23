@@ -28,6 +28,15 @@ module.exports = {
                     console.log(`Server error while attempting to create a new user: ${err}`);
                 });
             }
-        });
+        })
+    },
+
+    login: (req, res) => {
+        const db = req.app.get('db');
+        const {email, password} = req.body;
+
+        db.CHECK_EMAIL([email.toLowerCase()]).then((users) => {
+            
+        })
     }
 }
