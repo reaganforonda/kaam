@@ -95,14 +95,7 @@ export default class Landing extends React.Component{
                                 <p>Sign Up</p>
                                 <p>or Sign In to your account</p>
                             </div>
-                            <form>
-                                <input name='firstName' placeholder='First Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
-                                <input name='lastName' placeholder='Last Name' type='text' onChange={(e)=> this.handleInputChange(e)}/>
-                                <input name='email' placeholder='Email' type='email' onChange={(e)=> this.handleInputChange(e)} />
-                                <input required name='password' placeholder='Password' type='password' onChange={(e)=> this.handleInputChange(e)}/>
-                                <input required name='confirmPW' placeholder='Confirm Password' type='password' onChange={(e)=>this.handleInputChange(e)}/>
-                                <button type='button' onClick={(e)=>this.handleSubmit(e)}>Sign Up</button>
-                            </form>
+                            <SignUpForm/>
                         </div>
                     }
                 </div>
