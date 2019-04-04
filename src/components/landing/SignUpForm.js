@@ -11,15 +11,26 @@ export default class SignUpForm extends React.Component{
             lastName: '',
             email: '',
             password: '',
-            confirmPW: ''
+            confirmPW: '',
+            displayPWMatchError: false
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
+        this.togglePWMatchError = this.togglePWMatchError.bind(this);
     }
 
     handleInputChange(e) {
         this.setState({[e.target.name]: e.target.value});
+    }
+
+    togglePWMatchError(e) {
+        if(this.state.displayPWMatchError){
+            this.setState({displayPWMatchError: false});
+        } else {
+            this.setState({displayPWMatchError: true});
+        }
+        
     }
 
     handleFormSubmit(e) {
@@ -33,6 +44,8 @@ export default class SignUpForm extends React.Component{
             } else {
                 alert('Password must contain at least 6 characters and must contain at least 1 number and 1 capital letter')
             }
+        } else {
+            this.togglePWMatchError();
         }
     }
 
@@ -59,6 +72,11 @@ export default class SignUpForm extends React.Component{
                     onChange={(e)=>this.handleInputChange(e)}/>
                 <input required name='confirmPW' type='password' placeholder='Confirm Password' 
                     onChange={(e)=>this.handleInputChange(e)}/>
+                {
+                    !this.state.displayPWMatchError ? null : <div>
+                        Passwords Do Not Match
+                    </div>
+                }
                 <button onClick={(e)=>this.handleFormSubmit(e)}>Submit</button>
             </form>
         )
