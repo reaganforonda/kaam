@@ -1,6 +1,6 @@
 module.exports = {
     /*
-     * Validate password.  Password must be at least 8 characters long and contain number and 
+     * Validate password.  Password must be at least 6 characters long and contain number and letter
      * @param password = password as stirng
      */
     validatePassword(pw) {
@@ -8,7 +8,7 @@ module.exports = {
         var lowerCaseLetters = /[a-z]/g;
         var numbers = /[0-9]/g;
 
-        if(pw.length < 8 ) {
+        if(pw.length < 6 ) {
             return false;
         } else {
             if(!pw.match(upperCaseLetters)) {
