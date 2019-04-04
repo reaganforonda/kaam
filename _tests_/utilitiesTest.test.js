@@ -3,6 +3,7 @@ let utilities = require('../src/utilities/utilities');
 
 /*
  * Password validation Function test
+ * Password must
  */
 
  test('If invalid passsword - should return false', ()=> {
