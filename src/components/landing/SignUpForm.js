@@ -26,12 +26,12 @@ export default class SignUpForm extends React.Component{
         e.preventDefault();
         let user = Object.assign({}, this.state);
         if(user.confirmPW === user.password) {
-            if(user.confirmPW !== '' && user.password !== '') {
-                if(util.validatePassword(user.confirmPW)) {
-                    axios.post('/api/auth/register', user).then((result) => {
-                        console.log(result);
-                    })
-                } 
+            if(util.validatePassword(user.confirmPW)){
+                axios.post('/api/auth/register', user).then((result) => {
+                    console.log(result);
+                })
+            } else {
+                alert('Password must contain at least 6 characters and must contain at least 1 number and 1 capital letter')
             }
         }
     }
