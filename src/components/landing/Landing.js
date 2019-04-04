@@ -7,8 +7,6 @@ const Main = styled.div`
 
     height: 100vh;
 `
-
-
 export default class Landing extends React.Component{
     constructor(props ){
         super(props);
