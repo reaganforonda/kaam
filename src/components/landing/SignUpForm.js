@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import * as util from '../../utilities/utilities';
 
 export default class SignUpForm extends React.Component{
     constructor(props) {
@@ -26,9 +27,11 @@ export default class SignUpForm extends React.Component{
         let user = Object.assign({}, this.state);
         if(user.confirmPW === user.password) {
             if(user.confirmPW !== '' && user.password !== '') {
-                axios.post('/api/auth/register', user).then((result) => {
-                    console.log(result);
-                })
+                if(util.validatePassword(user.confirmPW)) {
+                    axios.post('/api/auth/register', user).then((result) => {
+                        console.log(result);
+                    })
+                } 
             }
         }
     }
