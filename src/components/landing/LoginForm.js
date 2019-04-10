@@ -17,8 +17,6 @@ export default class LoginForm extends React.Component{
 
     hanleFormSubmit(e) {
         e.preventDefault();
-
-        
     }
 
     render(){
