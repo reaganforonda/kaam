@@ -1,4 +1,5 @@
 import React from 'react';
+import DashboardMenu from './DashboardMenu';
 
 export default class Dashboard extends React.Component{
     constructor(props) {
@@ -12,6 +13,7 @@ export default class Dashboard extends React.Component{
     render() {
         return (
             <div>
+                <DashboardMenu/>
                 This is the Dashboard
             </div>
         )
