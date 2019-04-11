@@ -1,16 +1,24 @@
 import React from 'react';
+import PropertyViewMenu from './PropertyViewMenu';
 
 export default class PropertyView extends React.Component{
     constructor(props) {
         super(props);
 
-        this.state={}
+        this.state={
+            displayAddPropertyForm: false
+        }
     }
 
     render(){
         return (
             <div>
-                Property View
+                <PropertyViewMenu/>
+                <div>
+                    {
+                        
+                    }
+                </div>
             </div>
         )
     }
