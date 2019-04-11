@@ -11,7 +11,14 @@ export default class DashboardMenu extends React.Component{
     render(){
         return (
             <div>
-                Menu
+                <ul>
+                    <li>
+                        Properties
+                    </li>
+                    <li>
+                        Reconciliation
+                    </li>
+                </ul>
             </div>
         )
     }
