@@ -10,7 +10,7 @@ export default class PropertyView extends React.Component{
             displayAddPropertyForm: false
         }
 
-        this.togglePropertyForm = this.togglePropertyForm.bind();
+        this.togglePropertyForm = this.togglePropertyForm.bind(this);
     }
 
     togglePropertyForm() {

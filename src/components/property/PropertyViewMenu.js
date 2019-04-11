@@ -1,20 +1,11 @@
 import React from 'react';
 
-export default class PropertyViewMenu extends React.Component{
-    constructor(props) {
-        super(props);
-
-        this.state={}
-    }
-
-    render(){
-        return (
-            <div>
-                <ul>
-                    <li onClick={()=>this.props.toggleForm()}>Add New Property</li>
-                    <li></li>
-                </ul>
-            </div>
-        )
-    }
+export default function PropertyViewMenu(props){
+    return (
+        <ul>
+            <li onClick={()=>props.toggleForm()}>
+                Add Property
+            </li>
+        </ul>
+    )
 }
