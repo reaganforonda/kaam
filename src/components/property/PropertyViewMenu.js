@@ -11,7 +11,7 @@ export default class PropertyViewMenu extends React.Component{
         return (
             <div>
                 <ul>
-                    <li>Add New Property</li>
+                    <li onClick={()=>this.props.toggleForm()}>Add New Property</li>
                     <li></li>
                 </ul>
             </div>

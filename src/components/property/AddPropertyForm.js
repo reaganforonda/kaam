@@ -14,7 +14,9 @@ export default class AddPropertyForm extends React.Component{
     render(){
         return (
             <form>
-                
+                <div>
+                    <input name='propertyName' />
+                </div>
             </form>
         )
     }
