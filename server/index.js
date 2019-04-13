@@ -5,6 +5,7 @@ const dotEnv = require('dotenv');
 const massive = require('massive');
 const app = express();
 const authController = require('./controllers/authController');
+const propertyController = require('./controllers/propertyController');
 dotEnv.config();
 
 app.use(bodyParser.json());
@@ -25,6 +26,9 @@ massive(CONNECTION_STRING).then(dbInstance => {
 
 // User Endpoints
 app.post('/api/auth/register', authController.register);
+
+// Property Endpoints
+app.post('/api/property', propertyController.addProperty);
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Creepin on Port: ${SERVER_PORT}`);
