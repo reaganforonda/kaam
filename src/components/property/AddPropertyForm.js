@@ -28,6 +28,7 @@ export default class AddPropertyForm extends React.Component{
             <form onSubmit={(e)=>this.handleFormSubmit(e)}>
                 <div>
                     <input name='propertyName' placeholder='Property Name' type='text' onChange={(e)=>this.handleInputChange(e)}/>
+                    <input name='acctSysCode' placeholder='Accounting System ID' type='text' onChange={(e)=>this.handleInputChange(e)}/>
                 </div>
             </form>
         )
