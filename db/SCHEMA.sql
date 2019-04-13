@@ -12,6 +12,6 @@ CREATE TABLE users (
 
 CREATE TABLE properties(
     property_id SERIAL PRIMARY KEY,
-    acct_sys_id VARCHAR(10),
-    property_name VARCHAR(45)
-)
+    property_name VARCHAR(45),
+    acct_sys_id VARCHAR(10)
+);
