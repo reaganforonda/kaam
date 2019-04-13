@@ -25,6 +25,7 @@ export default class AddPropertyForm extends React.Component{
             // TODO:
             console.log('Added OK');
             this.handleResetForm();
+            this.props.toggleForm();
         }).catch((err)=> {
             // TODO:
             console.log(`Error: ${err}`);
