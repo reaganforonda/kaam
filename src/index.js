@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {HashRouter} from 'react-router-dom';
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
+import {Provider} from 'react-redux';
+import store from './store';
 
 const GlobalReset = createGlobalStyle`
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -59,7 +61,7 @@ table {
 `
 
 
-ReactDOM.render(<HashRouter><GlobalReset/><App /></HashRouter>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><HashRouter><GlobalReset/><App /></HashRouter></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
