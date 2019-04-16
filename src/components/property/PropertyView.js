@@ -28,7 +28,7 @@ export default class PropertyView extends React.Component{
                 <PropertyViewMenu toggleForm={this.togglePropertyForm}/>
                 <div>
                     {
-                        this.state.displayAddPropertyForm ? <AddPropertyForm/> : null
+                        this.state.displayAddPropertyForm ? <AddPropertyForm toggleForm={this.togglePropertyForm}/> : null
                     }
                 </div>
             </div>
