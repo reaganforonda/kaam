@@ -1,7 +1,9 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import axios from 'axios';
 
-
-export default class PropertyList extends React.Component{
+export class PropertyList extends React.Component{
     constructor(props) {
         super(props);
 
@@ -10,9 +12,21 @@ export default class PropertyList extends React.Component{
         }
     }
 
+    componentDidMount(){
+        
+    }
+
     render(){
         return (
             <div>Property List</div>
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+        properties: state.propertiesReducer.properties
+    }
+}
+
+export default connect(mapStateToProps, {})(withRouter(PropertyList))
