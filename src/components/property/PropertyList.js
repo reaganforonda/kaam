@@ -13,12 +13,20 @@ export class PropertyList extends React.Component{
     }
 
     componentDidMount(){
-        
+        this.setState({allProperties: this.props.allProperties});
     }
 
     render(){
+        let allProperties = this.state.allProperties.map((property, index) => {
+            return (
+                <div key={property.property_id+index}>
+                    <div>{property.property_name}</div>
+                </div>
+            )
+        })
+
         return (
-            <div>Property List</div>
+            <div>{allProperties}</div>
         )
     }
 }
