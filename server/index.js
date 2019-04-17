@@ -29,7 +29,7 @@ app.post('/api/auth/register', authController.register);
 
 // Property Endpoints
 app.post('/api/property', propertyController.addProperty);
-app.get('/pai/property/:propertyID', propertyController.getProperty);
+app.get('/api/property/:propertyID', propertyController.getProperty);
 
 app.listen(SERVER_PORT, ()=>{
     console.log(`Creepin on Port: ${SERVER_PORT}`);
