@@ -12,5 +12,17 @@ module.exports = {
             res.sendStatus(400);
         })
 
+    },
+
+    getProperty : (req, res)=> {
+        const db = req.app.get('db');
+        const {propertyID} = req.body;
+
+        db.GET_PROPERTIES([propertyID]).then(()=> {
+            res.sendStatus(200);
+        }).catch((err) => {
+            console.log(`Server error while attempting to get properties: ${err}`);
+            res.sendStatus(400);
+        })
     }
 }
