@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 
 const GET_PROPERTIES = 'GET_PROPERTIES';
 
-export function loadLeagueInfo(propertyID){
+export function getProperties(propertyID){
     let properties = axios.get(`/api/property/${propertyID}`).then((result) => {
         return result.data
     })
