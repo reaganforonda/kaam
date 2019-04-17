@@ -1,8 +1,11 @@
 import React from 'react';
 import PropertyViewMenu from './PropertyViewMenu';
 import AddPropertyForm from './AddPropertyForm';
+import {connect} from 'react-redux';
+import {withRouter} from 'react-router-dom';
+import {getProperties} from '../../ducks/propertiesReducers';
 
-export default class PropertyView extends React.Component{
+export class PropertyView extends React.Component{
     constructor(props) {
         super(props);
 
@@ -22,6 +25,10 @@ export default class PropertyView extends React.Component{
         }
     }
 
+    componentDidMount(){
+        this.props.getProperties();
+    }
+
     render(){
         return (
             <div>
@@ -35,3 +42,11 @@ export default class PropertyView extends React.Component{
         )
     }
 }
+
+function mapStateToProps(state) {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, {getProperties})(withRouter(PropertyView));
