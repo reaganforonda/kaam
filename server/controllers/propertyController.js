@@ -18,8 +18,8 @@ module.exports = {
         const db = req.app.get('db');
         const {propertyID} = req.body;
 
-        db.GET_PROPERTIES([propertyID]).then(()=> {
-            res.sendStatus(200);
+        db.GET_PROPERTIES([propertyID]).then((properties)=> {
+            res.send(properties).status(200);
         }).catch((err) => {
             console.log(`Server error while attempting to get properties: ${err}`);
             res.sendStatus(400);
